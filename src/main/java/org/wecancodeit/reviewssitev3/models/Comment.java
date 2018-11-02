@@ -1,9 +1,11 @@
 package org.wecancodeit.reviewssitev3.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Comment {
 	@Id
 	@GeneratedValue
@@ -12,10 +14,9 @@ public class Comment {
 	private String commentContent;
 	@ManyToOne
 	private Review review;
-	
 
 	public Comment() {
-		
+
 	}
 
 	public Comment(Long id, String commentName, String commentContent) {
@@ -36,7 +37,7 @@ public class Comment {
 	public String getCommentContent() {
 		return commentContent;
 	}
-	
+
 	public Review getReview() {
 		return review;
 	}

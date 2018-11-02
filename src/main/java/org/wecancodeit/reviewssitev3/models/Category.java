@@ -20,6 +20,10 @@ public class Category {
 
 	}
 
+	public Category(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -32,7 +36,4 @@ public class Category {
 		return reviews;
 	}
 
-	public Category(String categoryName) {
-		this.categoryName = categoryName;
-	}
 }

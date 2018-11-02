@@ -23,11 +23,10 @@ public class Review {
 	private String brewery;
 	@ManyToOne
 	private Category category;
-	@OneToMany(mappedBy="review")
+	@OneToMany(mappedBy = "review")
 	private Collection<Comment> comments;
-	
 
-	@ManyToMany(mappedBy = "review")
+	@ManyToMany
 	private Collection<Tag> tags;
 
 	public Review() {
@@ -58,6 +57,7 @@ public class Review {
 	public String getContent() {
 		return content;
 	}
+
 	public Collection<Comment> getComments() {
 		return comments;
 	}
