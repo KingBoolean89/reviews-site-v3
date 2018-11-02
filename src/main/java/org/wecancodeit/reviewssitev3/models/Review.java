@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Review {
@@ -22,6 +23,10 @@ public class Review {
 	private String brewery;
 	@ManyToOne
 	private Category category;
+	@OneToMany(mappedBy="review")
+	private Collection<Comment> comments;
+	
+
 	@ManyToMany(mappedBy = "review")
 	private Collection<Tag> tags;
 
@@ -52,6 +57,9 @@ public class Review {
 
 	public String getContent() {
 		return content;
+	}
+	public Collection<Comment> getComments() {
+		return comments;
 	}
 
 	public String getAbv() {
