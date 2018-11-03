@@ -19,11 +19,10 @@ public class Comment {
 
 	}
 
-	public Comment(Long id, String commentName, String commentContent) {
-		super();
-		this.id = id;
+	public Comment(String commentName, String commentContent, Review review) {
 		this.commentName = commentName;
 		this.commentContent = commentContent;
+		this.review = review;
 	}
 
 	public Long getId() {

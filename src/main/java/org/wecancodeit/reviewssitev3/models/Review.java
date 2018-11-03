@@ -37,7 +37,8 @@ public class Review {
 
 	}
 
-	public Review(String title, String imageUrl, String content, String abv, String brewery, Category category,Tag...tags) {
+	public Review(String title, String imageUrl, String content, String abv, String brewery, Category category,
+			Tag... tags) {
 		this.title = title;
 		this.imageUrl = imageUrl;
 		this.content = content;
@@ -46,7 +47,6 @@ public class Review {
 		this.category = category;
 		this.tags = new HashSet<>(Arrays.asList(tags));
 	}
-
 
 	public Long getId() {
 		return id;

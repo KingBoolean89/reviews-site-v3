@@ -5,4 +5,6 @@ import org.wecancodeit.reviewssitev3.models.Tag;
 
 public interface TagRepository extends CrudRepository<Tag, Long> {
 
+	Tag findByTagNameIgnoreCase(String tagName);
+
 }

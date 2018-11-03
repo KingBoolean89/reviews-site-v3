@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title th:text="${review.title}">title</title>
 </head>
 <body>
+	<nav>
+		<ul>
+			<li th:each="category : ${categories}"><a th:href="|/categories/${category.id}|" th:text="${category.categoryName}">Category Links</a></li>
+		</ul>
+	</nav>
+	<main>
+		<div>
+			<h1 th:text="${review.title}">title</h1>
+			<figure>
+				<img th:src="@{|/images/${review.imageUrl}|}">
+			</figure>
+			
+		</div>		
+		<div id="review">
+			<p th:text="${review.abv}">abv</p>
+			<p th:text="${review.brewery}">brewery</p>
+			<p th:text="${review.content}">content</p>			
+		</div>
+		<form th:action="@{|/reviews/${review.id}/add-comment|}" method="post">
+			<label>Name: <input type="text" name="commentName" /></label>
+			<label>Comment: <input type="text" name="commentContent" /></Label>
+			<input type="hidden" th:value="${review.id}" name="id" />
+			<input type="submit" value="Submit" />
+		</form>
+
+	</main>
 
 </body>
 </html>
