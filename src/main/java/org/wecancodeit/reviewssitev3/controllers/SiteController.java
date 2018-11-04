@@ -56,8 +56,26 @@ public class SiteController {
 
 	@PostMapping("/reviews/{id}/add-tag")
 	public String addTag(@PathVariable(value = "id") Long id, String tagName) {
-		tagRepo.save(new Tag(tagName));
-		return "redirect:review/{id}";
+		Tag existingTag = tagRepo.findByTagNameIgnoreCase(tagName);
+		if (existingTag == null) {
+			Tag newTag = new Tag(tagName);
+			tagRepo.save(newTag);
+			reviewRepo.findById(id).get().addTag(newTag);
+			reviewRepo.save(reviewRepo.findById(id).get());
+		}
+		if (!reviewRepo.findById(id).get().getTags().contains(existingTag)) {
+			reviewRepo.findById(id).get().addTag(existingTag);
+			reviewRepo.save(reviewRepo.findById(id).get());
+		}
+		return "redirect:#";
+	}
+
+	@PostMapping("/reviews/{id}/remove-tag")
+	public String removeTag(@PathVariable(value = "id") Long id, String tagName) {
+		Tag tagToRemove = tagRepo.findByTagNameIgnoreCase(tagName);
+		reviewRepo.findById(id).get().removeTag(tagToRemove);
+		reviewRepo.save(reviewRepo.findById(id).get());
+		return "redirect:#";
 	}
 
 	@GetMapping("/categories")
