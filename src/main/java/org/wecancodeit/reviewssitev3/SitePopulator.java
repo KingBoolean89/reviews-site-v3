@@ -89,7 +89,9 @@ public class SitePopulator implements CommandLineRunner {
 //		commodorePerry.addTag(wheat);
 		commodorePerry = reviewRepo.save(commodorePerry);
 
-		Review elvisJuice = new Review("Elvis Juice", "./elvis-juice.jpg", "", "6.5%", "Brew Dog", ipa);
+		Review elvisJuice = new Review("Elvis Juice", "./elvis-juice.jpg",
+				"Direct trade offal raw denim jianbing. Deep v stumptown taxidermy enamel pin succulents, blue bottle heirloom man bun selfies iPhone readymade street art single-origin coffee. Twee fanny pack yr salvia DIY jean shorts green juice etsy man bun pour-over hella meh. Vice waistcoat af synth sriracha vexillologist master cleanse, YOLO tofu kinfolk.",
+				"6.5%", "Brew Dog", ipa);
 		elvisJuice = reviewRepo.save(elvisJuice);
 
 	}

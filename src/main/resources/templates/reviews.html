@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Reviews</title>
+<link rel="stylesheet" type="text/css" href="/css/categories.css">
 </head>
 <body>
-
+<div class = "boxes">
+	<ul class = "box">
+		<li><h1>All the Reviews!</h1></li>
+		<li th:each="review : ${reviews}">
+		<a th:href="|/reviews/${review.id}|" th:text="${review.title}"></a>
+		</li>
+	</ul>
+     </div>
 </body>
 </html>

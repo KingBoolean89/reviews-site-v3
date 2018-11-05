@@ -33,9 +33,9 @@
 </div>
 
 </div>
-   <div class = "boxes">
+   <!-- <div class = "boxes">
      <ul>
-	  <li th:each="category : ${categories}"> <!--th:href="|/categories/${category.id}|">-->
+	  <li th:each="category : ${categories}"> th:href="|/categories/${category.id}|">
 	<ul class = "box">
 		<li th:each="review : ${category.reviews}">
 		<a th:href="|/reviews/${review.id}|" th:text="${review.title}"></a>
@@ -44,7 +44,7 @@
 	</ul>
 	</li>
 	 </ul>
-     </div>
+     </div> -->
    </section>
 		</main>
 		<footer>
