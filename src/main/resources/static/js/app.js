@@ -61,6 +61,7 @@ addTagButton.addEventListener('click', () => {
 	const body = JSON.stringify({
 				tagName: input.value
 			})
+	console.log(body)
 	xhttp.send(body)
 })
 

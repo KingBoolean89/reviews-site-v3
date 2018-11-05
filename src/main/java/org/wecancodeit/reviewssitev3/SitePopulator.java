@@ -61,7 +61,7 @@ public class SitePopulator implements CommandLineRunner {
 		ipa = categoryRepo.save(ipa);
 
 		// Reviews
-		Review elliotNess = new Review("Elliot Ness Amber Lager", "./craft-beer-2468985_640.jpg",
+		Review elliotNess = new Review("Elliot Ness Amber Lager", "./elliot-ness.png",
 				"Lorem ipsum dolor amet forage paleo humblebrag art party cred bespoke squid pok pok mlkshk iPhone tote bag PBR&B thundercats cloud bread hammock. Williamsburg forage direct trade, irony church-key hell of readymade roof party microdosing. Pabst meh vinyl locavore lo-fi pour-over, skateboard polaroid swag viral tousled pok pok. Franzen selvage fashion axe 3 wolf moon.",
 				"6.1%", "Great Lakes", lager);
 //		elliotNess = reviewRepo.save(elliotNess);
@@ -71,16 +71,18 @@ public class SitePopulator implements CommandLineRunner {
 //		elliotNess.addTag(fruity);
 		elliotNess = reviewRepo.save(elliotNess);
 
-		Review lightkeeper = new Review("Light Keeper Blonde Ale", "./images/lightkeeper.jpg", "", "6.6%",
-				"Great Lakes", ale);
+		Review lightkeeper = new Review("Light Keeper Blonde Ale", "./lightkeeper.png",
+				"Waistcoat brooklyn biodiesel flannel. Sartorial waistcoat cold-pressed fanny pack retro DIY VHS cornhole meh freegan. Hell of ramps heirloom, hashtag raw denim gluten-free vice wayfarers kogi. Readymade heirloom viral beard art party. Biodiesel beard drinking vinegar keytar photo booth retro artisan. Tofu wayfarers tacos narwhal yuccie whatever air plant. Woke franzen wolf cold-pressed chicharrones.",
+				"6.6%", "Great Lakes", ale);
 //		lightkeeper.addTag(rich);
 //		lightkeeper.addTag(malty);
 //		lightkeeper.addTag(caramel);
 //		lightkeeper.addTag(citrus);
 		lightkeeper = reviewRepo.save(lightkeeper);
-		
-    Review commodorePerry = new Review("Commodore Perry IPA", "./images/commodore-perry.jpg", "", "7.7%",
-				"Great Lakes", ipa);
+
+		Review commodorePerry = new Review("Commodore Perry IPA", "./commodore-perry.png",
+				"Try-hard vice chia hot chicken pabst hashtag mumblecore blog farm-to-table chambray irony listicle shoreditch. Banh mi YOLO irony pok pok drinking vinegar occupy pork belly enamel pin. Poke pinterest tbh chia, synth intelligentsia biodiesel stumptown XOXO vinyl sriracha. Tattooed gentrify occupy trust fund selfies godard pitchfork venmo everyday carry fanny pack vegan. Tilde meh banh mi single-origin coffee gochujang. 8-bit tumblr raw denim, fam +1 fingerstache selfies sartorial prism four loko bicycle rights dreamcatcher activated charcoal.",
+				"7.7%", "Great Lakes", ipa);
 //		commodorePerry.addTag(pine);
 //		commodorePerry.addTag(crisp);
 //		commodorePerry.addTag(fullBodied);
