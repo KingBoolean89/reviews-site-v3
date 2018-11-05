@@ -70,7 +70,7 @@ addTagButton.addEventListener('click', () => {
  			})
  			.then(res => res.json())
  			.then(data => {
- 				data.forEach(tag =>{
+ 				data.tags.forEach(tag =>{
  					p.innerHTML = p.innerHTML + `
  						<a href = "/tag/${tag.id}" class="a${tag.id}">${tag.tagName}</a> <button class="button${tag.id}">X</button>
  					`; 
