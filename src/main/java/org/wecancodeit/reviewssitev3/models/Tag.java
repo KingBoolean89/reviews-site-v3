@@ -1,7 +1,6 @@
 package org.wecancodeit.reviewssitev3.models;
 
 import java.util.Collection;
-import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,7 @@ public class Tag {
 	private Long id;
 	private String tagName;
 	@JsonIgnore
-	@ManyToMany(mappedBy="tags")
+	@ManyToMany(mappedBy = "tags")
 	private Collection<Review> reviews;
 
 	public Tag() {
@@ -27,7 +26,12 @@ public class Tag {
 
 	public Tag(String tagName) {
 		this.tagName = tagName;
-	
+
+	}
+
+	public Tag(String tagName, Review review) {
+		this.tagName = tagName;
+		addReview(review);
 	}
 
 	public Long getId() {
@@ -42,30 +46,37 @@ public class Tag {
 		return reviews;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, reviews, tagName);
+	public void addReview(Review review) {
+		reviews.add(review);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Tag other = (Tag) obj;
-		return Objects.equals(id, other.id) && Objects.equals(reviews, other.reviews)
-				&& Objects.equals(tagName, other.tagName);
+	public void removeReview(Review review) {
+		reviews.remove(review);
 	}
 
-	@Override
-	public String toString() {
-		return "Tag [id=" + id + ", tagName=" + tagName + ", reviews=" + reviews + ", getId()=" + getId()
-				+ ", getTagName()=" + getTagName() + ", getReviews()=" + getReviews() + ", hashCode()=" + hashCode()
-				+ ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
-	}
-	
+	// @Override
+//	public int hashCode() {
+//		return Objects.hash(id, reviews, tagName);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Tag other = (Tag) obj;
+//		return Objects.equals(id, other.id) && Objects.equals(reviews, other.reviews)
+//				&& Objects.equals(tagName, other.tagName);
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Tag [id=" + id + ", tagName=" + tagName + ", reviews=" + reviews + ", getId()=" + getId()
+//				+ ", getTagName()=" + getTagName() + ", getReviews()=" + getReviews() + ", hashCode()=" + hashCode()
+//				+ ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
+//	}
 
 }
