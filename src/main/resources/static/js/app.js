@@ -24,7 +24,7 @@
 //    .then(data => console.log)
 //})
 
-const addTagButton = document.querySelector('button')
+const addTagButton = document.querySelector('.button')
 const p = document.querySelector('.tags')
 const original = p.innerHTML;
 

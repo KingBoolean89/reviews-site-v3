@@ -24,38 +24,46 @@
 			<p th:text="${review.content}">content</p>
 						
 		</div>
+		<section id="tags_section">
+			<h3>Tag your favorite posts!</h3>
+	 		<form th:action="@{|/reviews/${review.id}/add-tag|}" method="post">
+				<label>Add Tag: <input type="text" name="tagName" /></label>
+				<input type="hidden" th:value="${review.id}" name="id" />
+				<input class="button" type="submit" value="Submit" />
+			</form>
+	<!-- 		<form th:action="@{|/reviews/${review.id}/remove-tag|}" method="post">
+				<label>Remove Tag: <input type="text" name="tagName" /></label>
+				<input type="hidden" th:value="${review.id}" name="id" />
+				<input class="button" type="submit" value="Submit" />
+			</form> -->
+			<p class="tags"></p>
+		</section>
+		<section id="comments_section">
+		<h3>Leave us a comment!</h3>	
 		<form th:action="@{|/reviews/${review.id}/add-comment|}" method="post">
 			<label>Name: <input type="text" name="commentName" /></label>
 			<label>Comment: <input type="text" name="commentContent" /></Label>
 			<input type="hidden" th:value="${review.id}" name="id" />
 			<input type="submit" value="Submit" />
 		</form>
-
-<!-- 		<form th:action="@{|/reviews/${review.id}/add-tag|}" method="post">
-			<label>Name: <input type="text" name="tagName" /></label>
-			<input type="hidden" th:value="${review.id}" name="id" />
-			<input type="submit" value="Submit" />
-		</form>
-		<form th:action="@{|/reviews/${review.id}/remove-tag|}" method="post">
-			<label>Name: <input type="text" name="tagName" /></label>
-			<input type="hidden" th:value="${review.id}" name="id" />
-			<input type="submit" value="Submit" />
-		</form>
-		 <a class="tags">
+		<ul>
+			<li th:each="comment : ${comments}"><p th:text="${comment.commentName}">Comment by</p><p th:text="${comment.commentContent}"></p></li>
+		</ul>
+		</section>
+		<!-- <a class="tags">
       <label>New Tag: <input id="tagInput" type="text" name="tagName" /></label>
       <button>Add Tag</button>
-    </a>
-	</main> -->
+    </a>-->
 	
 
 
-		<div>
+		<!-- <div>
 			<p>
 				<label >Add a Tag: <input class="tag_section" type="text" name="tagName"/></label>
 			</p>
 			<button class="tagSubmit">Submit</button>
 			<p class="tags">Tags:</p>
-		</div>
+		</div> -->
 	</main>
 <script src="/js/dom.js"></script>
 

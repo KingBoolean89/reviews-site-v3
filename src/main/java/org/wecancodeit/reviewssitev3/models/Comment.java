@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Comment {
 	@Id
@@ -12,6 +14,7 @@ public class Comment {
 	private Long id;
 	private String commentName;
 	private String commentContent;
+	@JsonIgnore
 	@ManyToOne
 	private Review review;
 
