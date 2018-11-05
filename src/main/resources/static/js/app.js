@@ -41,7 +41,7 @@ addTagButton.addEventListener('click', () => {
 			p.innerHTML = original;
 			JSON.parse(this.responseText).forEach(tag =>{
 				p.innerHTML = p.innerHTML + `
-					<a href = "/tag/${tag.id}" class="a${tag.id}">${tag.tagName}</a> <button class="button${tag.id}">X</button>
+					<a href = "/tags/${tag.id}" class="a${tag.id}">${tag.tagName}</a> <button class="button${tag.id}">X</button>
 				`;
 				document.querySelector(`.button${tag.id}`).addEventListener('click', () => {
  						fetch(`/api/review/${window.location.pathname.split('/')[2]}/tags/remove`, {
@@ -73,7 +73,7 @@ addTagButton.addEventListener('click', () => {
  			.then(data => {
  				data.tags.forEach(tag =>{
  					p.innerHTML = p.innerHTML + `
- 						<a href = "/tag/${tag.id}" class="a${tag.id}">${tag.tagName}</a> <button class="button${tag.id}">X</button>
+ 						<a href = "/tags/${tag.id}" class="a${tag.id}">${tag.tagName}</a> <button class="button${tag.id}">X</button>
  					`; 
  					document.querySelector(`.button${tag.id}`).addEventListener('click', () => {
  						fetch(`/api/review/${window.location.pathname.split('/')[2]}/tags/remove`, {

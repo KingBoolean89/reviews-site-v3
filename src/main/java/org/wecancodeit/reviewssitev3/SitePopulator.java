@@ -89,6 +89,9 @@ public class SitePopulator implements CommandLineRunner {
 //		commodorePerry.addTag(wheat);
 		commodorePerry = reviewRepo.save(commodorePerry);
 
+		Review elvisJuice = new Review("Elvis Juice", "./elvis-juice.jpg", "", "6.5%", "Brew Dog", ipa);
+		elvisJuice = reviewRepo.save(elvisJuice);
+
 	}
 
 }
