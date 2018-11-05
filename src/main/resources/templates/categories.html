@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<title>Categories</title>
+	<link rel="stylesheet" type="text/css" href="/css/categories.css">
 </head>
 <body>
+<div class="container">
+<nav class="main-nav" id= "anime">
+	<ul>
+	 <li th:each="category : ${categories}"> <!--th:href="|/categories/${category.id}|">-->
+		<a th:href="|/categories/${category.id}|" th:text="${category.categoryName}">Category Name</a>	</ul>
+		</nav>
+		<main>
+		<se
+<div class="slideshow-container">
 
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="./images/bar-2209813_640.jpg" alt="">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="./images/bar-209148_640.jpg" alt="">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./images/pub-2243488_640.jpg" alt="">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+   <div class = "boxes">
+     <ul>
+	  <li th:each="category : ${categories}"> <!--th:href="|/categories/${category.id}|">-->
+	<ul class = "box">
+		<li th:each="review : ${category.reviews}">
+		<a th:href="|/reviews/${review.id}|" th:text="${review.title}"></a>
+		<p th:href="|/reviews/${review.id}|" th:text="${review.content}"></p>
+		</li>
+	</ul>
+	</li>
+	 </ul>
+     </div>
+   </section>
+		</main>
+		<footer>
+			<small>&copy; 2018</small>
+		</footer>
+	</div>
+	<script src="./js/category.js"></script>	
 </body>
 </html>

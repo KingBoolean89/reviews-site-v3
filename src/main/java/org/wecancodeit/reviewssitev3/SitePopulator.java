@@ -63,14 +63,14 @@ public class SitePopulator implements CommandLineRunner {
 		ipa = categoryRepo.save(ipa);
 
 		// Reviews
-		Review elliotNess = new Review("Elliot Ness Amber Lager", "./images/elliot-ness.jpg",
+		Review elliotNess = new Review("Elliot Ness Amber Lager", "./craft-beer-2468985_640.jpg",
 				"Lorem ipsum dolor amet forage paleo humblebrag art party cred bespoke squid pok pok mlkshk iPhone tote bag PBR&B thundercats cloud bread hammock. Williamsburg forage direct trade, irony church-key hell of readymade roof party microdosing. Pabst meh vinyl locavore lo-fi pour-over, skateboard polaroid swag viral tousled pok pok. Franzen selvage fashion axe 3 wolf moon.",
 				"6.1%", "Great Lakes", lager, tag1,tag2,tag3,tag4);
 		elliotNess = reviewRepo.save(elliotNess);
-		Review lightkeeper = new Review("Light Keeper Blonde Ale", "./images/lightkeeper.jpg", "", "6.6%",
+		Review lightkeeper = new Review("Light Keeper Blonde Ale", "./beers-1283566_640.jpg", "", "6.6%",
 				"Great Lakes", ale,tag5,tag6,tag7,tag8);
 		lightkeeper = reviewRepo.save(lightkeeper);
-		Review commodorePerry = new Review("Commodore Perry IPA", "./images/commodore-perry.jpg", "", "7.7%",
+		Review commodorePerry = new Review("Commodore Perry IPA", "./craft-beer-1998293_640.jpg", "", "7.7%",
 				"Great Lakes", ipa,tag9,tag10,tag11,tag12);
 		commodorePerry = reviewRepo.save(commodorePerry);
 

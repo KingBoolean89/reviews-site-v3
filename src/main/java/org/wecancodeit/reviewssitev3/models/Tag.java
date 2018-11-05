@@ -37,6 +37,7 @@ public class Tag {
 	public String getTagName() {
 		return tagName;
 	}
+	
 
 	public Collection<Review> getReviews() {
 		return reviews;

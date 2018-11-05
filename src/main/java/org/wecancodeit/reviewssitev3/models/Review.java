@@ -46,7 +46,6 @@ public class Review {
 		this.brewery = brewery;
 		this.category = category;
 		this.tags = new HashSet<>(Arrays.asList(tags));
-		System.out.println(tags);
 	}
 
 	public Long getId() {
@@ -84,13 +83,12 @@ public class Review {
 	public Collection<Tag> getTags() {
 		return tags;
 	}
-
 	public void addTag(Tag tag) {
 		this.tags.add(tag);
 	}
-
 	public void removeTag(Tag tag) {
 		this.tags.remove(tag);
 	}
+	
 
 }
