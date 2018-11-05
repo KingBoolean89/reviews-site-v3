@@ -10,20 +10,20 @@
 //		
 //		tags.innerHTML = tagLinks
 //	})
-	const input = document.querySelector('#tagInput')
-const addTagButton = document.querySelector('button')
+//	const input = document.querySelector('#tagInput')
+//const addTagButton = document.querySelector('button')
+//
+//addTagButton.addEventListener('click', () => {
+//  fetch(`../api/reviews/16/${window.location.pathname.split('/')[2]}```,{
+//    method:'post',
+//    body: JSON.stringify({
+//      tagName: input.value,
+//    }),
+//  })
+//    .then(res => res.json())
+//    .then(data => console.log)
+//})
 
-addTagButton.addEventListener('click', () => {
-  fetch(`../api/reviews/16/${window.location.pathname.split('/')[2]}```,{
-    method:'post',
-    body: JSON.stringify({
-      tagName: input.value,
-    }),
-  })
-    .then(res => res.json())
-    .then(data => console.log)
-})
-=======
 const addTagButton = document.querySelector('button')
 const p = document.querySelector('.tags')
 const original = p.innerHTML;
