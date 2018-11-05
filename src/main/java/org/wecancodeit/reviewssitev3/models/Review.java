@@ -52,6 +52,7 @@ public class Review {
 		this.abv = abv;
 		this.brewery = brewery;
 		this.category = category;
+
 	}
 
 	public Long getId() {
@@ -89,13 +90,12 @@ public class Review {
 	public Collection<Tag> getTags() {
 		return tags;
 	}
-
 	public void addTag(Tag tag) {
 		tags.add(tag);
 	}
-
 	public void removeTag(Tag tag) {
 		tags.remove(tag);
 	}
+	
 
 }

@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<title th:text="${category.categoryName}">Category</title>
+	<link rel="stylesheet" href="/css/category-style.css">
 </head>
 <body>
+	<div class="wrapper">
+		<header>
+			<h1 th:text="${category.categoryName}">Name</h1>
+		</header>
+		<main>
+		 <section class="info">
+      		 <div class="slideshow-container" "section2">
+			  <div class="mySlides1">
+			    <img src="/images/beer-1605826_640.jpg" alt="">
+			  </div>
 
+			  <div class="mySlides1">
+			    <img src="/images/craft-beer-1998293_640.jpg" alt="">
+			  </div>
+
+			  <div class="mySlides1">
+			    <img src="/images/craft-beer-2468985_640.jpg" alt="">
+			  </div>
+
+			  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+			</div>
+			<h2>Checkout these reviews?</h2>
+			<section class ="wrapper-box">
+			<div class= "box box1" th:each="review : ${category.reviews}">
+				<a th:href="|/reviews/${review.id}|" th:text="${review.title}"></a>
+				<p th:text="${review.content}"></p>
+			</div>
+			</section>
+	 	</section>
+		</main>
+		</div>
+		<footer>
+			<a href="/categories">Back to Home</a>
+			<small>&copy; 2018</small>
+		</footer>
+	<script src="/js/index.js"></script>	
 </body>
 </html>
