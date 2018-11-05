@@ -25,53 +25,66 @@ public class SitePopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		//Tags
-		Tag tag1 = tagRepo.save(new Tag("Hoppy"));
-		Tag tag2 = tagRepo.save(new Tag("Bold"));
-		Tag tag3 = tagRepo.save(new Tag("Bitter"));
-		Tag tag4 = tagRepo.save(new Tag("Fruity"));
-		Tag tag5 = tagRepo.save(new Tag("Rich"));
-		Tag tag6 = tagRepo.save(new Tag("Malt"));
-		Tag tag7 = tagRepo.save(new Tag("Caramel"));
-		Tag tag8 = tagRepo.save(new Tag("Citrus"));
-		Tag tag9 = tagRepo.save(new Tag("Pine"));
-		Tag tag10 = tagRepo.save(new Tag("Crisp"));
-		Tag tag11 = tagRepo.save(new Tag("Full-bodied"));
-		Tag tag12 = tagRepo.save(new Tag("Wheat"));
-//		tag1 = tagRepo.save(tag1);
-//		tag2 = tagRepo.save(tag2);
-//		tag3 = tagRepo.save(tag3);
-//		tag4 = tagRepo.save(tag4);
-//		tag5 = tagRepo.save(tag5);
-//		tag6 = tagRepo.save(tag6);
-//		tag7 = tagRepo.save(tag7);
-//		tag8 = tagRepo.save(tag8);
-//		tag9 = tagRepo.save(tag9);
-//		tag10 = tagRepo.save(tag10);
-//		tag11 = tagRepo.save(tag11);
-//		tag12 = tagRepo.save(tag12);
-		
-		
+
+		// Tags
+//		Tag hoppy = new Tag("Hoppy");
+//		Tag bold = new Tag("Bold");
+//		Tag bitter = new Tag("Bitter");
+//		Tag fruity = new Tag("Fruity");
+//		Tag rich = new Tag("Rich");
+//		Tag malty = new Tag("Malty");
+//		Tag caramel = new Tag("Caramel");
+//		Tag citrus = new Tag("Citrus");
+//		Tag pine = new Tag("Pine");
+//		Tag crisp = new Tag("Crisp");
+//		Tag fullBodied = new Tag("Full-Bodied");
+//		Tag wheat = new Tag("Wheat");
+//		hoppy = tagRepo.save(hoppy);
+//		bold = tagRepo.save(bold);
+//		bitter = tagRepo.save(bitter);
+//		fruity = tagRepo.save(fruity);
+//		rich = tagRepo.save(rich);
+//		malty = tagRepo.save(malty);
+//		caramel = tagRepo.save(caramel);
+//		citrus = tagRepo.save(citrus);
+//		pine = tagRepo.save(pine);
+//		crisp = tagRepo.save(crisp);
+//		fullBodied = tagRepo.save(fullBodied);
+//		wheat = tagRepo.save(wheat);
 
 		// Categories
 		Category lager = new Category("Lager");
-		lager = categoryRepo.save(lager);
 		Category ale = new Category("Ale");
-		ale = categoryRepo.save(ale);
 		Category ipa = new Category("IPA");
+		lager = categoryRepo.save(lager);
+		ale = categoryRepo.save(ale);
 		ipa = categoryRepo.save(ipa);
 
 		// Reviews
 		Review elliotNess = new Review("Elliot Ness Amber Lager", "./craft-beer-2468985_640.jpg",
 				"Lorem ipsum dolor amet forage paleo humblebrag art party cred bespoke squid pok pok mlkshk iPhone tote bag PBR&B thundercats cloud bread hammock. Williamsburg forage direct trade, irony church-key hell of readymade roof party microdosing. Pabst meh vinyl locavore lo-fi pour-over, skateboard polaroid swag viral tousled pok pok. Franzen selvage fashion axe 3 wolf moon.",
-				"6.1%", "Great Lakes", lager, tag1,tag2,tag3,tag4);
+				"6.1%", "Great Lakes", lager);
+//		elliotNess = reviewRepo.save(elliotNess);
+//		elliotNess.addTag(hoppy);
+//		elliotNess.addTag(bold);
+//		elliotNess.addTag(bitter);
+//		elliotNess.addTag(fruity);
 		elliotNess = reviewRepo.save(elliotNess);
-		Review lightkeeper = new Review("Light Keeper Blonde Ale", "./beers-1283566_640.jpg", "", "6.6%",
-				"Great Lakes", ale,tag5,tag6,tag7,tag8);
+
+		Review lightkeeper = new Review("Light Keeper Blonde Ale", "./images/lightkeeper.jpg", "", "6.6%",
+				"Great Lakes", ale);
+//		lightkeeper.addTag(rich);
+//		lightkeeper.addTag(malty);
+//		lightkeeper.addTag(caramel);
+//		lightkeeper.addTag(citrus);
 		lightkeeper = reviewRepo.save(lightkeeper);
-		Review commodorePerry = new Review("Commodore Perry IPA", "./craft-beer-1998293_640.jpg", "", "7.7%",
-				"Great Lakes", ipa,tag9,tag10,tag11,tag12);
+		
+    Review commodorePerry = new Review("Commodore Perry IPA", "./images/commodore-perry.jpg", "", "7.7%",
+				"Great Lakes", ipa);
+//		commodorePerry.addTag(pine);
+//		commodorePerry.addTag(crisp);
+//		commodorePerry.addTag(fullBodied);
+//		commodorePerry.addTag(wheat);
 		commodorePerry = reviewRepo.save(commodorePerry);
 
 	}

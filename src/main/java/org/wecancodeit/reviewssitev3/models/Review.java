@@ -1,8 +1,7 @@
 package org.wecancodeit.reviewssitev3.models;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +10,6 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Review {
@@ -29,7 +26,7 @@ public class Review {
 	private Category category;
 	@OneToMany(mappedBy = "review")
 	private Collection<Comment> comments;
-	@JsonIgnore
+
 	@ManyToMany
 	private Collection<Tag> tags;
 
@@ -38,14 +35,24 @@ public class Review {
 	}
 
 	public Review(String title, String imageUrl, String content, String abv, String brewery, Category category,
-			Tag... tags) {
+			List<Tag> tags) {
 		this.title = title;
 		this.imageUrl = imageUrl;
 		this.content = content;
 		this.abv = abv;
 		this.brewery = brewery;
 		this.category = category;
-		this.tags = new HashSet<>(Arrays.asList(tags));
+		this.tags = tags;
+	}
+
+	public Review(String title, String imageUrl, String content, String abv, String brewery, Category category) {
+		this.title = title;
+		this.imageUrl = imageUrl;
+		this.content = content;
+		this.abv = abv;
+		this.brewery = brewery;
+		this.category = category;
+
 	}
 
 	public Long getId() {
@@ -84,10 +91,10 @@ public class Review {
 		return tags;
 	}
 	public void addTag(Tag tag) {
-		this.tags.add(tag);
+		tags.add(tag);
 	}
 	public void removeTag(Tag tag) {
-		this.tags.remove(tag);
+		tags.remove(tag);
 	}
 	
 
